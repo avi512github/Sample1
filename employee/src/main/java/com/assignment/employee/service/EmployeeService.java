@@ -29,14 +29,14 @@ public class EmployeeService{
         }
 	}
 
-	public List<Employee> getAllEmployeesNamesHiredAfterDateAndMinSalaryIs(Date particularDate, Integer minSalary)  throws RecordNotFoundException{
+	public List<Employee> getAllEmployeesNamesHiredAfterDateAndMinSalaryIs(String particularDate, Integer minSalary)  throws Exception{
 		
-		java.sql.Timestamp sq = new java.sql.Timestamp(particularDate.getTime());  
+		//java.sql.Timestamp sq = new java.sql.Timestamp(particularDate.getTime());  
 
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		
 		
-		List<Employee> employeeList = repository.getAllEmployeesNamesHiredAfterDateAndMinSalaryIs(sdf.format(sq), minSalary);
+		List<Employee> employeeList = repository.getAllEmployeesNamesHiredAfterDateAndMinSalaryIs(particularDate, minSalary);
 		
 		if(employeeList.size()>0) {
             return employeeList;

@@ -34,7 +34,7 @@ public class EmployeeController {
 	  }
 	  
 	  @GetMapping("hiredate/{date}/salary/{minSalary}") 
-	  public ResponseEntity<List<Employee>> getAllEmployeesNamesHiredAfterDateAndMinSalaryIs(@PathVariable("date") @DateTimeFormat(pattern="yyyy-MM-dd") Date particularDate, @PathVariable("minSalary") Integer minSalary) throws RecordNotFoundException { 
+	  public ResponseEntity<List<Employee>> getAllEmployeesNamesHiredAfterDateAndMinSalaryIs(@PathVariable("date") String particularDate, @PathVariable("minSalary") Integer minSalary) throws Exception { 
 		  List<Employee> list = employeeService.getAllEmployeesNamesHiredAfterDateAndMinSalaryIs(particularDate, minSalary);
 	  
 		  return new ResponseEntity<List<Employee>>(list, new HttpHeaders(), HttpStatus.OK); 
